@@ -1,0 +1,588 @@
+@import "./css/reset.css";
+@import "./css/vars.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Haylyard Micro", Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  background-color: var("--blue");
+  align-items: center;
+  padding: 1.6rem;
+  color: var("--orange");
+  letter-spacing: 0.2rem;
+}
+
+.header__link {
+  text-decoration: none;
+  color: var("--orange");
+  font-family: "Haylyard Micro", sans-serif;
+}
+
+.boldText {
+  font-weight: bold;
+  color: white;
+}
+
+.wrapper {
+  display: grid;
+}
+
+.menu {
+  margin-top: 6.2rem;
+  margin-left: 2rem;
+}
+
+.menu__item {
+  margin-bottom: 5.1rem;
+  background-color: var(--orange);
+  border-radius: 50%;
+  font-size: var("--plus");
+  font-weight: 100;
+  width: 5.4rem;
+  height: 5.4rem;
+  position: relative;
+  line-height: 0;
+}
+
+.menu__item--pencil {
+  margin-bottom: 5.1rem;
+  background-color: var(--orange);
+  border-radius: 50%;
+  font-size: var("--plus");
+  font-weight: 100;
+  width: 5.4rem;
+  height: 5.4rem;
+  position: relative;
+  line-height: 0;
+}
+
+.link__item {
+  text-decoration: none;
+  font-family: "Niveau Grotesk", helvetica, sans-serif;
+  font-weight: 100;
+  position: absolute;
+  bottom: 55%;
+  left: 19%;
+  text-align: center;
+  color: var("--white");
+}
+
+.link__item--pencil {
+  text-decoration: none;
+  font-family: "Niveau Grotesk", helvetica, sans-serif;
+  font-weight: 100;
+  position: absolute;
+  bottom: 20%;
+  left: 29%;
+  text-align: center;
+  color: var("--white");
+}
+
+.sort {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.1rem;
+  color: var("--orange");
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sortDrop {
+  border: 0.1rem solid var("--orange");
+  border-radius: 33rem;
+  width: 10rem;
+  height: 2rem;
+  background-color: var("--orange");
+  color: white;
+}
+
+.allPosts {
+  margin-top: 1.9rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.post {
+  background-color: var("--blue");
+  border: solid 0.1rem var("--orange");
+  border-radius: 1rem;
+  width: 29.7rem;
+  margin-bottom: 1.4rem;
+  padding: 0.8rem;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.post_wrapper {
+  display: grid;
+  grid-template-columns: 4.5rem 14.7rem 1rem auto;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 0.7rem;
+}
+
+.post_wrapper-open {
+  display: grid;
+  grid-template-columns: 4.5rem 14.7rem 1rem auto;
+  grid-template-rows: auto auto auto auto auto;
+  grid-row-gap: 0.7rem;
+}
+
+.post__title {
+  align-self: center;
+  grid-column: 2;
+  color: white;
+  font-weight: bold;
+  font-size: var("--postTitle");
+  letter-spacing: 0.2rem;
+  font-family: "Forma DJR Deck", helvetica, sans-serif;
+}
+
+.post__gepland {
+  grid-column: 1/3;
+  grid-row: 2;
+  color: var("--orange");
+  font-weight: bold;
+  font-family: "Niveau Grotesk", helvetica, sans-serif;
+  align-self: center;
+  font-size: var("--gepland");
+}
+
+.post_beschrijving__title {
+  grid-row: 3;
+  font-size: var("--beschrijvingTitle");
+  color: var("--orange");
+  font-family: "Forma DJR Deck", helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  align-self: flex-end;
+}
+
+.beschrijving {
+  font-size: var("--beschrijving");
+  font-weight: normal;
+  grid-row: 4;
+  grid-column: 1/3;
+  color: var("--white");
+  font-family: "Niveau Grotesk", helvetica, sans-serif;
+}
+
+.post__hashtags {
+  grid-row: 3;
+  grid-column: 1/5;
+  display: flex;
+  font-size: var("--hashtags");
+}
+
+.post__hashtags-open {
+  grid-row: 5;
+  grid-column: 1/5;
+  display: flex;
+  font-size: var("--hashtags");
+}
+
+.post__image {
+  height: 7rem;
+}
+
+.post__image--open {
+  height: 8rem;
+}
+
+.post_rightWrapper {
+  grid-row: 1/5;
+  grid-column: 5;
+  display: flex;
+  justify-self: flex-end;
+  flex-flow: column-reverse;
+  align-self: flex-start;
+}
+
+.post_imgWrapper--open {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border: 0.1rem solid var("--orange");
+  border-radius: 0.5rem;
+}
+
+.post_imgWrapper {
+  grid-column: 4;
+  grid-row: 1/5;
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border: 0.1rem solid var("--orange");
+  border-radius: 0.5rem;
+}
+
+.hashTag {
+  background-color: white;
+  padding: 0.2rem 0.6rem;
+  margin-right: 0.6rem;
+  color: var("--orange");
+  font-family: "Niveau Grotesk", helvetica, sans-serif;
+  font-weight: bold;
+  border: 0.1rem solid var("--orange");
+  border-radius: 2rem;
+}
+
+.additions {
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  margin-top: 3.8rem;
+  display: grid;
+  grid-template-columns: 5.4rem 12.2rem 4.9rem 5.4rem;
+}
+
+.addNote {
+  grid-column: 1;
+  background-color: var(--orange);
+  border-radius: 50%;
+  font-size: var("--plus");
+  font-weight: 100;
+  width: 5.4rem;
+  height: 5.4rem;
+  position: relative;
+  line-height: 0;
+}
+
+.newPost {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.postTitle {
+  text-decoration: none;
+  color: var(--orange);
+}
+
+.addButton {
+  grid-column: 4;
+  background-color: var(--orange);
+  border-radius: 50%;
+  font-size: var("--plus");
+  font-weight: 100;
+  width: 5.4rem;
+  height: 5.4rem;
+  position: relative;
+  line-height: 0;
+}
+
+.buttonText {
+  position: absolute;
+  bottom: 60%;
+  left: 15%;
+  text-align: center;
+  color: var("--white");
+}
+
+.addButton__rotated {
+  transform: rotate(45deg);
+}
+
+.form__page {
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
+  margin-top: 2.3rem;
+  display: grid;
+  grid-template-rows: 41.2rem 3.1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form__wrapper {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-rows: 5.5rem 1.8rem 28.8rem 5.1rem;
+}
+
+.post_title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Forma DJR Deck", helvetica, sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var("--orange");
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  grid-column: 1/3;
+}
+
+.post_title__input {
+  margin-top: 0.1rem;
+  height: 3rem;
+  border: var("--blue") solid 0.1rem;
+  border-radius: 0.5rem;
+}
+
+.upload_file {
+  display: grid;
+  grid-row: 3;
+  grid-column: 1/3;
+  justify-content: center;
+  align-content: center;
+  background: url("assets/img/backgrounddashes.svg") content-box;
+}
+
+.next {
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: flex-end;
+  align-items: flex-end;
+  border: none;
+  font-family: "Forma DJR Deck", helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  color: var("--orange");
+}
+
+.back {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.back-img {
+  display: flex;
+}
+
+.form__wrapper2 {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-rows: 2.4rem 2rem 5rem 2rem 5rem 24.8rem ;
+  grid-template-columns: 2rem 4.9rem 5.1rem 4.9rem 5.1rem 4.9rem;
+}
+
+.social_title {
+  font-family: "Forma DJR Deck", helvetica, sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var("--orange");
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  grid-row: 1;
+  grid-column: 1/6;
+}
+
+.social--fb {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.social--insta {
+  grid-row: 3;
+  grid-column: 4;
+}
+
+.social--twitter {
+  grid-row: 3;
+  grid-column: 6;
+}
+
+.social--linked {
+  grid-row: 5;
+  grid-column: 2;
+}
+
+.social--yt {
+  grid-row: 5;
+  grid-column: 4;
+}
+
+.social--snap {
+  grid-row: 5;
+  grid-column: 6;
+}
+
+.form__wrapper3 {
+  font-family: "Forma DJR Deck", helvetica, sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var("--orange");
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+
+  grid-column: 1/3;
+  display: grid;
+  grid-template-rows: 19.4rem 3.6rem 5.5rem 3.1rem 5.5rem;
+}
+
+.add__description {
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: 2.4rem 16.7rem;
+  grid-row-gap: .3rem;
+
+}
+
+.add__hashtags {
+  grid-row: 3;
+  display: grid;
+}
+
+.add__friends {
+  grid-row: 5;
+  display: grid;
+}
+
+@media only screen and (min-width: 321px) {
+  header {
+    flex-flow: row-reverse;
+    justify-content: flex-end;
+    height: 9.2rem;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.75);
+    font-size: 3.6rem;
+  }
+
+  .logolittle {
+    margin-top: 1.3rem;
+    display: none;
+  }
+
+  h1 {
+    margin-left: 3.7rem;
+  }
+
+  .wrapper {
+    grid-template-columns: 5.7rem 1fr;
+  }
+
+  .navigation {
+    width: 9.2rem;
+    height: 100rem;
+    background-color: var("--blue");
+  }
+
+  .content {
+    grid-column: 2;
+    margin-top: 6.3rem;
+    margin-left: 10.9rem;
+  }
+
+  .sort {
+    display: none;
+  }
+
+  .allPosts {
+    display: grid;
+    grid-template-columns: 20.7rem 2.6rem 20.7rem 2.6rem 20.7rem 2.6rem 20.7rem 2.6rem 20.7rem 2.6rem 20.7rem 2.6rem 20.7rem 2.6rem;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .post {
+    height: auto;
+    width: 20.7rem;
+    padding: 0;
+  }
+
+  .post_wrapper {
+    display: none;
+  }
+
+  .additions {
+    display: none;
+  }
+
+  .post_wrapper-open {
+    grid-template-columns: 0.7rem 0.6rem 1.3rem 13.9rem 1.6rem 2.6rem;
+    grid-template-rows: 0 auto auto auto auto auto auto 0;
+    grid-row-gap: 1.2rem;
+  }
+
+  .social__media {
+    grid-column: 5;
+    grid-row: 2;
+    grid-row-gap: 1;
+  }
+
+  .post__title {
+    grid-column: 2/5;
+    grid-row: 2;
+  }
+
+  .post_rightWrapper {
+    grid-row: 5;
+    grid-column: 4/6;
+  }
+
+  .post_beschrijving__title {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .beschrijving {
+    grid-row: 4;
+    grid-column: 3/6;
+  }
+
+  .post__gepland {
+    grid-row: 6;
+    grid-column: 2/5;
+  }
+
+  .post__hashtags-open {
+    grid-row: 7;
+    grid-column: 2;
+  }
+
+  .post_imgWrapper--open {
+    width: 15.5rem;
+    height: 11.3rem;
+  }
+
+  .post__image--open {
+    width: 15.5rem;
+    height: 11.3rem;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 320px) {
+  header {
+    justify-content: space-between;
+    height: 5.7rem;
+    font-size: 1.8rem;
+  }
+
+  .logobig {
+    display: none;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .wrapper {
+    margin-top: 1.8rem;
+    grid-gap: 1.8rem;
+  }
+}
